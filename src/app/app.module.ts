@@ -10,6 +10,7 @@ import { RecipeDetailComponent } from '../components/recipe-detail/recipe-detail
 import { RecipeListComponent } from '../components/recipe-list/recipe-list.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { RecipesComponent } from '../components/recipes/recipes.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RecipesComponent } from '../components/recipes/recipes.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
