@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onSelect('recipe')" >Recipes</a>
+                <a class="nav-link" routerLink="/recipes" >Recipes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onSelect('shoppingList')" >Shopping List</a>
+                <a class="nav-link" routerLink="/shopping-list" >Shopping List</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto nav">
@@ -19,8 +19,8 @@
                     Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Save Data</a>
-                    <a class="dropdown-item" href="#">Fetch Data</a>
+                    <a class="dropdown-item" style="cursor: pointer;">Save Data</a>
+                    <a class="dropdown-item" style="cursor: pointer;">Fetch Data</a>
                 </div>
             </li>
         </ul>
