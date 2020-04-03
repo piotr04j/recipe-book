@@ -7,14 +7,9 @@ import { Subject } from 'rxjs'
 @Injectable()
 export class RecipeService {
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'A recipe',
-      'Just do it!',
-      'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      [ new Ingredient('Lemon',1), new Ingredient('Potato', 4)]
-    )
-  ]
+  recipeChanged = new Subject<Recipe[]>()
+
+  private recipes: Recipe[] = []
 
   constructor (private shoppingListService: ShoppingListService) {}
 
@@ -28,6 +23,26 @@ export class RecipeService {
 
   getRecipe(index: number) {
     return this.recipes[index]
+  }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe)
+    this.recipeChanged.next([...this.recipes])
+  }
+
+  editRecipe(index: number, recipe: Recipe) {
+    this.recipes[index] = recipe
+    this.recipeChanged.next([...this.recipes])
+  }
+
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1)
+    this.recipeChanged.next([...this.recipes])
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes
+    this.recipeChanged.next([...this.recipes])
   }
 }
 
