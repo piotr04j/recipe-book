@@ -10,10 +10,12 @@ import { RecipeDetailComponent } from '../components/recipe-detail/recipe-detail
 import { RecipeListComponent } from '../components/recipe-list/recipe-list.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { RecipesComponent } from '../components/recipes/recipes.component'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ShoppingListService } from '../services/shopping-list.service';
 import { RecipeStartComponent } from '../components/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from '../components/recipe-edit/recipe-edit.component'
+import { RecipeService } from '../services/recipe.service'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -32,8 +34,10 @@ import { RecipeEditComponent } from '../components/recipe-edit/recipe-edit.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
