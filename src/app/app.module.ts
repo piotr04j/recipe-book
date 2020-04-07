@@ -19,6 +19,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AuthComponent } from '../components/auth/auth.component'
 import { LoadingSpinnerComponent } from '../components/loading-spinner/loading-spinner.component'
 import { AuthInterceptorService } from '../services/auth-interceptor.service'
+import { AlertComponent } from '../components/alert/alert.component'
+import { PlaceholderDirective } from '../utils/placeholder.directive'
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AuthInterceptorService } from '../services/auth-interceptor.service'
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
